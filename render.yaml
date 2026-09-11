@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: akshara
+    runtime: python
+    rootDir: akshara-backend
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn akshara_backend.wsgi --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: "3.12.3"
