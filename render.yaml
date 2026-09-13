@@ -2,7 +2,7 @@ services:
   - type: web
     name: akshara
     runtime: python
-    rootDir:  rootDir: akshara-fullstack/akshara-backend
+    rootDir: akshara-fullstack/akshara-backend
     plan: free
     buildCommand: "./build.sh"
     startCommand: "gunicorn akshara_backend.wsgi --bind 0.0.0.0:$PORT"
